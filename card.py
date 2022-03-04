@@ -1,8 +1,10 @@
 class Card(object):
 
 
-    def __init__(self, suit, value):
-        """Instantiates a Card object by `suit` and `value`
+    def __init__(self, suit=-1, value=-1):
+        """Instantiates a Card object by `suit` and `value`. 
+        
+        The 'empty space' card is represented by passing `-1` to both `suit` and `value`
 
         Args:
             suit (int): The suit of the card, where 1=clubs, 2=diamonds, 3=hearts, 4=spades
@@ -17,11 +19,16 @@ class Card(object):
 
 
     def set_name(self):
-        """Method to set the name of the card
+        """Method to set the name of the card. The 'empty space' is represented by `suit=-1`, `value=-1`
 
         Raises:
             ValueError: if one of the values passed into `__init__()` is out of range
         """
+        # Check if card is the dummy card
+        if self.value == self.suit == -1:
+            self.name = "   "
+            return
+        
         # Set the value of the card
         if self.value == 1:
             self.name = "A "
