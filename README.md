@@ -2,7 +2,7 @@
 This is an implementation of a game my friends and I played at university. I have very fond memories of playing this game, particularly in my first year!
 
 ## How the game works
-Four Corners is a card game whereby you need to complete a $$4 \times 4$$ grid of cards.
+Four Corners is a card game whereby you need to complete a 4 x 4 grid of cards.
 - You start with {CARDS} number of cards laid out. 
 - You must then choose a position to place the card, either to the left, right, above, or below one of the cards laid out already 
 - You must also say whether the next card, placed from the deck, will be higher or lower.
