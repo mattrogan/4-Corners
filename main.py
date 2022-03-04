@@ -1,10 +1,12 @@
 from card import Card
+from board import Board
 from random import shuffle
 
-def GameState(object):
+class GameState(object):
     
     def __init__(self):
         self.setup_deck()
+        self.board = Board()
     
     def setup_deck(self):
         """Method to set up the deck of cards
@@ -24,3 +26,5 @@ def GameState(object):
 
         # Randomise the order of the deck
         shuffle(self.deck)
+        
+game = GameState()
