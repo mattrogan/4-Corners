@@ -13,7 +13,8 @@ class GameState(object):
         for i in [1, 4]:
             for j in [1, 4]:
                 self.board.place(i, j, self.deck.pop(0))
-                
+        
+        print("The board starts like this:")        
         self.print_board()
     
     def setup_deck(self):
