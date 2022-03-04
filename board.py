@@ -7,6 +7,17 @@ class Board(object):
         self.state = [[Card(-1, -1) for _ in range(4)] for _ in range(4)]
         
     def place(self, i, j, card):
+        """Places `card` at position `(i,j)` on the board.
+
+        Args:
+            i (int): row of location to place the card
+            j (int): column of location to place the card
+            card (Card): the card to be placed on the board
+
+        Raises:
+            TypeError: if a non-Card object is passed, or a non-integer for the position.
+            ValueError: if the space `(i,j)` is already filled.
+        """
         row = i - 1
         col = j - 1
         # Assert that card is a Card object 
@@ -20,10 +31,9 @@ class Board(object):
         
         # Assert the position is free
         if self.state[row][col].value == -1:
-            print(f"Card placed at ({i},{j})")
             self.state[row][col] = card
         else:
-            print("You cannot place this card here.")
+            raise ValueError("You cannot place this card here.")
         
 
           
@@ -32,3 +42,6 @@ class Board(object):
         for row in self.state:
             returnStr += str(row) +"\n"
         return returnStr[:-1] # Remove the last newline return
+    
+    def __repr__(self):
+        return str(self)
