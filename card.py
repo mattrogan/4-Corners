@@ -65,3 +65,40 @@ class Card(object):
 
     def __repr__(self):
         return str(self.name)
+    
+    def __eq__(self, other):
+        if isinstance(other, Card):
+            return self.value == other.value
+        else:
+            raise TypeError("can only compare two Card objects")
+        
+    def __add__(self, other):
+        if isinstance(other, Card):
+            return self.value + other.value
+        else:
+            raise TypeError("can only add two Card objects")
+        
+    def __gt__(self, other):
+        if isinstance(other, Card):
+            return self.value.__gt__(other.value)
+        else:
+            raise TypeError("can only compare two Card objects")
+        
+    def __lt__(self, other):
+        if isinstance(other, Card):
+            return self.value.__lt__(other.value)
+        else:
+            raise TypeError("can only compare two Card objects")
+        
+    def __le__(self, other):
+        if isinstance(other, Card):
+            return self.value.__le__(other.value)
+        else:
+            raise TypeError("can only compare two Card objects")
+        
+    def __ge__(self, other):
+        if isinstance(other, Card):
+            return self.value.__ge__(other.value)
+        else:
+            raise TypeError("can only compare two Card objects")
+        
