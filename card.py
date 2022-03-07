@@ -58,6 +58,15 @@ class Card(object):
         else:
             # Value error if suit not in range (1-4)
             raise ValueError("suit must be integer between 1-4 corresponding to clubs, diamonds, hearts, spades respectively")
+        
+    def is_dummy(self):
+        """Predicate method to check if card is dummy or not
+        
+        Returns:
+            (bool): True, if `val == suit == -1`
+                    False, otherwise
+        """
+        return self.suit == self.value == -1
 
     def __str__(self):
         """Prints the card by name"""
