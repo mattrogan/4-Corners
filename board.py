@@ -33,7 +33,7 @@ class Board(object):
         if self.state[row][col].value == -1:
             self.state[row][col] = card
         else:
-            raise ValueError("You cannot place this card here.")
+            raise ValueError("Space already has a card placed here")
         
 
           

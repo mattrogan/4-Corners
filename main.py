@@ -17,12 +17,28 @@ class GameState(object):
         still_going = True
         
         print("The board starts like this:")        
-        self.print_board()
         
         while still_going:
+            self.print_board()
             print("Enter row and column for next card")
             row = int(input("Row: "))        
             col = int(input("Column: "))
+            
+            print()
+            
+            # Validate row/col
+            while not ((1 <= row <= 4) and (1 <= col <= 4)):
+                print("Row and column must be between 1-4 \nTry again.")
+                row = int(input("Row: "))    
+                col = int(input("Column: "))
+            else:
+                next_card = self.deck.pop()
+                try:
+                    self.board.place(row, col, next_card)
+                except ValueError:
+                    print("This space already has a card in it.")
+            
+            print()
     
     def setup_deck(self):
         """Method to set up the deck of cards
