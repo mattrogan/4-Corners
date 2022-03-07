@@ -14,8 +14,15 @@ class GameState(object):
             for j in [1, 4]:
                 self.board.place(i, j, self.deck.pop(0))
         
+        still_going = True
+        
         print("The board starts like this:")        
         self.print_board()
+        
+        while still_going:
+            print("Enter row and column for next card")
+            row = int(input("Row: "))        
+            col = int(input("Column: "))
     
     def setup_deck(self):
         """Method to set up the deck of cards
