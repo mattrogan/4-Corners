@@ -12,7 +12,7 @@ class GameState(object):
         # Place the initial four cards
         for i in [1, 4]:
             for j in [1, 4]:
-                self.board.place(i, j, self.deck.pop(0))
+                self.board.place(i, j, self.deck.pop())
         
         still_going = True
         

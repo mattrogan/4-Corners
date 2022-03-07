@@ -3,7 +3,7 @@ from card import Card
 class Board(object):
     
     def __init__(self):
-        
+        """Constructor for 4x4 Board object"""
         self.state = [[Card(-1, -1) for _ in range(4)] for _ in range(4)]
         
     def place(self, i, j, card):
@@ -20,8 +20,8 @@ class Board(object):
         """
         row = i - 1
         col = j - 1
-        # Assert that card is a Card object 
         
+        # Assert that card is a Card object 
         if not isinstance(card, Card):
             raise TypeError("card must be a Card object")
         
@@ -35,7 +35,10 @@ class Board(object):
         else:
             raise ValueError("Space already has a card placed here")
         
-
+    def clear_board(self):
+        """Clears the board for a new game
+        """
+        self.state = [[Card(-1, -1) for _ in range(4)] for _ in range(4)]
           
     def __str__(self):
         returnStr = ""
