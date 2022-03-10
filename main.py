@@ -61,6 +61,19 @@ class GameState(object):
         
     def print_board(self):
         return print(game.board)
+    
+    def revise(self):
+        """Revise the game state"""
+        pass
         
+    def revise_card(self, i, j):
+        """Revise places around a specific card
+
+        Args:
+            i (int): Row of card to revise
+            j (int): Column of card to revise
+        """
+        pass
+                
 game = GameState()
 game.play()
